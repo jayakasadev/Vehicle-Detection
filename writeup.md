@@ -26,8 +26,9 @@ The goals / steps of this project are the following:
 
 I started by reading in all the `vehicle` and `non-vehicle` images from the `dataset` directory.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
-![non-vehicle][https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/extra1.png]
-![non-vehicle][https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/image0000.png]
+[non-vehicle](https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/extra1.png)
+
+[non-vehicle](https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/image0000.png)
 
 The `feature_extration` method takes in a file path list, loads the images and processes each one. I use this method to load all images from the `dataset` directory and prepare them for training an SVM later on.  
 
@@ -37,7 +38,7 @@ I then explored different color spaces and different `skimage.hog()` parameters 
 
 I tried various combinations of parameters. The process took a lot of experimentation and many hours to see what worked best. Certain combinations were better than others. This method was really good at picking up lane lines, which I explored a little. However, in the end, I settled on using the parameters used during the lectures. 
 
-![ROAD HOG][https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/hog_road.JPG]
+[ROAD HOG](https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/hog_road.JPG)
 
 #### 3. Training a classifier.
 
@@ -51,15 +52,15 @@ I searched sequentially through the lower half of image. This was done because t
 
 After all vehicles were identified, at all scales, I corrected for multiple identification and false positives. This was done by adding `heat` and thresholding the image.
 
-![Identified][https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/identified.JPG]
+[Identified](https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/identified.JPG)
 
 #### 2. Optimization of Classifier.
 
 Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
 
-![Heatmap][https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/heatmap.JPG]
-![Heatmap][https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/heatmap1.JPG]
-![Heatmap][https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/heatmap2.JPG]
+[Heatmap](https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/heatmap.JPG)
+[Heatmap2](https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/heatmap1.JPG)
+[Heatmap3](https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/heatmap2.JPG)
 ---
 
 ### Video Implementation
@@ -74,8 +75,8 @@ I recorded the positions of positive detections in each frame of the video.  Fro
 
 Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
 
-![Identified][https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/identified.JPG]
-![Heatmap][https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/heatmap.JPG]
+[Identified](https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/identified.JPG)
+[Heatmap](https://github.com/jayakasadev/Vehicle-Detection/blob/master/samples/heatmap.JPG)
 
 ---
 
